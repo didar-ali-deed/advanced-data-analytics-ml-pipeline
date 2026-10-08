@@ -1,8 +1,38 @@
 # UCI Retail Observatory
 
+**End-to-End Retail Data Analytics, Machine Learning & Power BI**
+
+[![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/) [![Power BI](https://img.shields.io/badge/Power%20BI-3--Page%20Dashboard-F2C811?logo=powerbi&logoColor=black)](powerbi/) [![License: MIT](https://img.shields.io/badge/Code%20License-MIT-blue.svg)](LICENSE)
+
 An executable, auditable Python project for retail analytics and next-day recorded-sales forecasting. It processes the real UCI Online Retail II workbook through 25 dedicated stages: acquisition, data quality, relational modeling, SQL, statistics, visualization, machine learning, Power BI export and reporting.
 
 The business problem is to understand historical sales concentration, cancellation exposure and customer activity, then test whether next-day recorded gross sales can be forecast more usefully than a same-weekday baseline. This is a historical research project; it does not claim current commercial deployment validation.
+
+## Power BI dashboard showcase
+
+A **three-page Power BI Desktop report** complements the Python/SQL pipeline. These are screenshots of the completed report pages, not mockups. The dashboards use the exported retail fact/dimension data and DAX measures; a `.pbix` file is **not currently confirmed as part of this repository**.
+
+### 1. Executive Overview
+
+Five KPI cards summarize recorded gross sales, cancellation value, known buyers, sale invoices and average invoice value. A monthly trend presents historical sales across December 2009–December 2011.
+
+![Power BI Executive Overview](powerbi/Executive%20Overview.png)
+
+### 2. Sales & Operational Performance
+
+Country rankings, daily sales, cancellation-to-sales ratios by country and average daily sales by weekday. Cancellation ratios compare recorded amounts; they are **not** order-cancellation probabilities.
+
+![Power BI Sales and Operations](powerbi/Sales%20%26%20Operations.png)
+
+### 3. Customer & Product Analytics
+
+Top product descriptions, top identified customers, observed purchase-frequency bands, and known vs anonymous gross sales. Purchase-frequency bands are a **static snapshot at model refresh**, not dynamically recomputed across date slicers.
+
+![Power BI Customer and Product Analytics](powerbi/Customer%20%26%20Product%20Analytics.png)
+
+**Interpretation notes:** the source has non-merchandise descriptions such as `Manual`, `POSTAGE` and `DOTCOM POSTAGE`; these should not be interpreted as top physical products without additional filtering. Anonymous sales are preserved in headline totals. The final month is partial.
+
+[Power BI import guide](powerbi/power_query_steps.md) · [Data model](powerbi/data_model.md) · [DAX measure catalog](powerbi/dax_measures.md) · [Dashboard design notes](powerbi/dashboard_design.md)
 
 ## Data and attribution
 
@@ -60,7 +90,7 @@ flowchart LR
 - `data/{raw,validated,interim,cleaned,processed,features,powerbi}/`: immutable source and reproducible outputs, excluded from Git.
 - `models/`: persisted pipelines, evaluation, predictions and model card; large trained artifacts excluded from Git.
 - `reports/`, `visualizations/`: generated evidence, charts with interpretations and final report.
-- `tests/`, `docs/`, `powerbi/`: automated tests, methodology, source/dictionary documentation and Desktop handoff.
+- `tests/`, `docs/`, `powerbi/`: automated tests, methodology, Power BI specifications and three dashboard screenshots.
 
 See [pipeline architecture and checkpoints](docs/pipeline_architecture.md).
 
@@ -107,20 +137,24 @@ All final plots use 300 DPI and a consistent color scheme. [Visualization manife
 
 Additional plots cover missingness, anomalies, distributions, geographic baskets, correlations, contribution curves, statistical intervals and residuals. Samples are seeded and labeled.
 
-## Power BI
+## Power BI integration and modeling
 
-Stage 24 exports a line fact, four dimensions and a daily forecast-evaluation table, with validated keys and a CSV dictionary.
+Stage 24 produces six Power BI-ready CSVs in `data/powerbi/`: `fact_sales`, `dim_product`, `dim_customer`, `dim_country`, `dim_date` and `forecast_evaluation`, together with a data dictionary and validation manifest. Raw and generated data are not committed to Git; reproduce the exports by running the pipeline.
+
+The Power BI report uses a star-style model with relationships from the product, customer, country and date dimensions to `fact_sales`, plus a separate calendar-to-forecast relationship. The forecast has **daily total-retailer grain** and should not be sliced by product, customer or country.
 
 ```mermaid
 erDiagram
-    dim_product ||--o{ fact_sales : product_id
+    dim_product ||--o{ fact_sales : product_key
     dim_customer ||--o{ fact_sales : customer_id
     dim_country ||--o{ fact_sales : country_id
     dim_date ||--o{ fact_sales : date
     dim_date ||--o| forecast_evaluation : date
 ```
 
-Follow [Power Query import steps](powerbi/power_query_steps.md), [relationships](powerbi/data_model.md), [23 DAX measures](powerbi/dax_measures.md) and [five dashboard layouts](powerbi/dashboard_design.md). Power BI Desktop construction is manual; **no PBIX is claimed**.
+**Power BI product-key compatibility:** source product codes can differ only by letter case (for example `72529w` and `72529W`), while Power BI relationships handle text case-insensitively. In the manually built dashboard, a distinct numeric `product_key` was added to the product dimension and mapped into the sales fact through a case-preserving matching key. Original product codes remain available for display. This Power BI Desktop transformation is not claimed to be included in the Python export schema; see the screenshots and replicate it if importing the CSVs directly produces a duplicate-key relationship error.
+
+The project documents [Power Query steps](powerbi/power_query_steps.md), [relationship specifications](powerbi/data_model.md), [23 baseline DAX measures](powerbi/dax_measures.md) and [the original five-page design proposal](powerbi/dashboard_design.md). **Three pages were actually built and captured**, as shown above; the five-page design document is a broader optional blueprint, not a claim that five report pages exist. Additional measures/columns were added in Power BI Desktop for customer segmentation and reporting. A distributable `.pbix` file has not been verified in the repository, so screenshots are the published dashboard deliverable.
 
 ## Tests and reproducibility evidence
 
