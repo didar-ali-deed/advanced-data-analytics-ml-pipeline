@@ -1,0 +1,41 @@
+{
+  "selected_model": "ridge",
+  "holdout_start": "2011-07-20 00:00:00",
+  "holdout_end": "2011-12-08 00:00:00",
+  "metrics": {
+    "selected": {
+      "MAE": 11275.682921078846,
+      "RMSE": 15433.157442885475,
+      "R2": 0.6029059722328332,
+      "WAPE": 0.3069617438696727,
+      "n": 142,
+      "MAPE_note": "Omitted: genuine zero-sales days make MAPE inappropriate."
+    },
+    "seasonal_naive": {
+      "MAE": 12271.486112676055,
+      "RMSE": 17802.842774928715,
+      "R2": 0.47160038223233003,
+      "WAPE": 0.3340708321956877,
+      "n": 142,
+      "MAPE_note": "Omitted: genuine zero-sales days make MAPE inappropriate."
+    },
+    "dummy_mean": {
+      "MAE": 21483.46054376612,
+      "RMSE": 27087.76509258332,
+      "R2": -0.22329198728626176,
+      "WAPE": 0.5848515392838654,
+      "n": 142,
+      "MAPE_note": "Omitted: genuine zero-sales days make MAPE inappropriate."
+    }
+  },
+  "protocol": "Fixed-model rolling one-day-ahead evaluation; prior realized days update lag inputs.",
+  "selection_independent_of_test": true,
+  "forecast_horizon_days": 1,
+  "limitations": [
+    "Historical retailer only; no contemporary deployment validation.",
+    "Gross recorded sales include service codes and ambiguous repeated lines.",
+    "Few hundred daily observations despite over a million source lines.",
+    "Extreme wholesale orders and seasonality can dominate errors.",
+    "Nonnegative clipping is applied consistently during CV and inference."
+  ]
+}

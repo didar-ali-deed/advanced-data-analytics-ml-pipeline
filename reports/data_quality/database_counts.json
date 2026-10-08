@@ -1,0 +1,7 @@
+{
+  "dim_product": 5304,
+  "dim_customer": 5943,
+  "dim_country": 43,
+  "dim_date": 739,
+  "fact_sales": 1044843
+}

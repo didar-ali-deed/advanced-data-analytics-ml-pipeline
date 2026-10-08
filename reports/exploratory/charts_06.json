@@ -1,0 +1,8 @@
+[
+  {
+    "title": "Signed source quantities and prices",
+    "path": "visualizations/anomalies/source_outliers.png",
+    "question": "How extreme are the recorded values?",
+    "interpretation": "Statistical extremes remain; negative prices are separately quarantined. Isolation Forest is omitted because univariate rules are interpretable for these fields."
+  }
+]

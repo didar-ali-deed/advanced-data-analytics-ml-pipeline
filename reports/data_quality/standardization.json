@@ -1,0 +1,17 @@
+{
+  "columns": {
+    "Invoice": "invoice_id",
+    "StockCode": "product_id",
+    "Description": "description",
+    "Quantity": "quantity",
+    "InvoiceDate": "invoice_date",
+    "Price": "unit_price",
+    "Customer ID": "customer_id",
+    "Country": "country"
+  },
+  "currency": "GBP; no conversion",
+  "timestamps": "Source-local naive datetime. Source does not document timezone.",
+  "identifiers": "Strings; trim whitespace and numeric .0 suffix; retain leading zeros.",
+  "country": "Whitespace cleanup only; no undocumented category harmonization.",
+  "boolean": "Derived flags from explicit business rules, stored as Boolean."
+}

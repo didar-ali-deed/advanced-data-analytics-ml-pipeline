@@ -1,0 +1,35 @@
+{
+  "winner": "ridge",
+  "selection_metric": "validation_MAE",
+  "cv_folds": [
+    {
+      "fold": 0,
+      "train_end": "2010-03-31 00:00:00",
+      "validation_start": "2010-04-01 00:00:00",
+      "train_rows": 93,
+      "validation_rows": 92
+    },
+    {
+      "fold": 1,
+      "train_end": "2010-07-01 00:00:00",
+      "validation_start": "2010-07-02 00:00:00",
+      "train_rows": 185,
+      "validation_rows": 92
+    },
+    {
+      "fold": 2,
+      "train_end": "2010-10-01 00:00:00",
+      "validation_start": "2010-10-02 00:00:00",
+      "train_rows": 277,
+      "validation_rows": 92
+    },
+    {
+      "fold": 3,
+      "train_end": "2011-01-01 00:00:00",
+      "validation_start": "2011-01-02 00:00:00",
+      "train_rows": 369,
+      "validation_rows": 92
+    }
+  ],
+  "test_used": false
+}

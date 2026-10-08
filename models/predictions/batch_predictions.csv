@@ -1,0 +1,2 @@
+date,predicted_gross_sales_gbp,prediction_kind
+2011-12-09,45724.16994959272,unscored_historical_replay

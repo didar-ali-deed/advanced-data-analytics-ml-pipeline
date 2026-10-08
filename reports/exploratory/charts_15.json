@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Distribution of positive invoice values",
+    "path": "visualizations/distributions/invoice_distribution.png",
+    "question": "How large are recorded baskets?",
+    "interpretation": "Median invoice-group value is GBP 302.78; 99th percentile is GBP 4,408.59."
+  },
+  {
+    "title": "Basket distributions in six frequent markets",
+    "path": "visualizations/categories/country_baskets.png",
+    "question": "How do basket sizes vary by market?",
+    "interpretation": "Boxes show within-market dispersion; hidden plotted fliers remain in all calculations."
+  },
+  {
+    "title": "Sampled basket-value density by market",
+    "path": "visualizations/distributions/basket_violin.png",
+    "question": "Are market distributions similarly shaped?",
+    "interpretation": "Density uses a seeded sample of 5,000 positive invoice groups."
+  },
+  {
+    "title": "Daily recorded sales and trailing trend",
+    "path": "visualizations/time_series/daily_sales.png",
+    "question": "How volatile are daily sales?",
+    "interpretation": "Daily gross sales range from GBP 0 to GBP 200,939; final source day may be partial."
+  },
+  {
+    "title": "Monthly gross sales and cancellation value",
+    "path": "visualizations/time_series/monthly_sales.png",
+    "question": "How do sales and cancellation values evolve?",
+    "interpretation": "1 monthly period(s) are incomplete."
+  },
+  {
+    "title": "Top ten countries by gross sales",
+    "path": "visualizations/categories/country_sales.png",
+    "question": "Which markets dominate?",
+    "interpretation": "United Kingdom contributes 85.1%."
+  },
+  {
+    "title": "Product-code contribution curve",
+    "path": "visualizations/categories/product_concentration.png",
+    "question": "How concentrated is the assortment?",
+    "interpretation": "The leading 20 codes contribute 13.8% of gross sales."
+  },
+  {
+    "title": "Spearman association across invoice measures",
+    "path": "visualizations/correlations/invoice_correlations.png",
+    "question": "How do basket value, units and lines relate?",
+    "interpretation": "Invoice-derived measures share mathematical components; associations are not causal."
+  },
+  {
+    "title": "Units and value in sampled invoices",
+    "path": "visualizations/relationships/units_value.png",
+    "question": "Do large baskets always have high value?",
+    "interpretation": "Log axes retain wholesale extremes and show variation in unit price and assortment."
+  },
+  {
+    "title": "Sampled invoice relationships",
+    "path": "visualizations/relationships/invoice_pairplot.png",
+    "question": "What multivariate patterns deserve investigation?",
+    "interpretation": "600 seeded sampled invoices; all three measures use log1p transformations."
+  },
+  {
+    "title": "Observed customer purchase retention",
+    "path": "visualizations/dashboards/cohort_retention.png",
+    "question": "How do cohorts return over time?",
+    "interpretation": "Blank future cells are unobserved. First cohort is left-censored; final month is incomplete."
+  },
+  {
+    "title": "Weekly sales pattern using all calendar days",
+    "path": "visualizations/time_series/weekday_sales.png",
+    "question": "Which weekdays carry more recorded sales?",
+    "interpretation": "Means include zero-record dates; no-record days do not prove absence of demand."
+  },
+  {
+    "title": "Market contribution over time",
+    "path": "visualizations/categories/market_mix.png",
+    "question": "Does the geographic sales mix change?",
+    "interpretation": "Each column uses that month's gross sales denominator; final month is partial."
+  },
+  {
+    "title": "Customer-level difference with 95% bootstrap CI",
+    "path": "visualizations/relationships/customer_difference_ci.png",
+    "question": "What is the uncertainty around the geographic contrast?",
+    "interpretation": "Difference GBP -293.98; interval [-377.48, -222.53]. Observational association, not a geographic treatment effect."
+  }
+]

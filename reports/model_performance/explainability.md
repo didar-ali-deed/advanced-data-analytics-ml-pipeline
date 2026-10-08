@@ -1,0 +1,3 @@
+# Explainability limits
+
+Permutation is a post-evaluation diagnostic; the model is already frozen. Shuffling disrupts time/feature dependence and may create unrealistic combinations. Correlated lags can share or obscure importance. Repeat standard deviation is permutation variability, not a population confidence interval. Importance does not establish direction or causation. SHAP/PDP are omitted because temporal lag dependence would require additional conditional-background assumptions. Historical wholesale mix, missing identities and a single retailer limit generalization.

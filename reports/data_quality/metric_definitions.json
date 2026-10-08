@@ -1,0 +1,6 @@
+{
+  "gross_sales": "Positive quantity and price, non-cancellation; includes service codes.",
+  "net_value": "Signed quantity x price; not audited net revenue or profit.",
+  "calendar": "No-record dates have zero observed sales, not asserted zero latent demand.",
+  "final_day": "Last source day may be incomplete; omitted from model training/evaluation."
+}

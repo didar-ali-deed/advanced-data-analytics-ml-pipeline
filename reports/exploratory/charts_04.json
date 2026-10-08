@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Missing values by source field",
+    "path": "visualizations/anomalies/missing_bar.png",
+    "question": "Which fields lack information?",
+    "interpretation": "Customer IDs are missing in 22.8% of source rows."
+  },
+  {
+    "title": "Missingness across sampled source rows",
+    "path": "visualizations/anomalies/missing_matrix.png",
+    "question": "Do missing fields co-occur?",
+    "interpretation": "Display shows a seeded sample; totals use all rows."
+  },
+  {
+    "title": "Joint missingness as percentage of all rows",
+    "path": "visualizations/anomalies/missing_heatmap.png",
+    "question": "Which fields are absent together?",
+    "interpretation": "Cells use all source rows as the denominator."
+  }
+]

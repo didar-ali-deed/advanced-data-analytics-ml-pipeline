@@ -1,0 +1,41 @@
+{
+  "target": "Recorded gross sales in GBP on day t, not profit or latent demand",
+  "prediction_time": "Immediately before day t; transaction aggregation available through t-1",
+  "features": [
+    "weekday",
+    "month",
+    "day_of_year_sin",
+    "day_of_year_cos",
+    "lag_1",
+    "lag_7",
+    "lag_14",
+    "lag_28",
+    "rolling_7",
+    "rolling_28",
+    "rolling_std_7",
+    "lag_orders_1",
+    "trend_7_28"
+  ],
+  "maximum_lag_days": 28,
+  "split": {
+    "train": {
+      "rows": 461,
+      "start": "2009-12-29 00:00:00",
+      "end": "2011-04-03 00:00:00"
+    },
+    "validation": {
+      "rows": 107,
+      "start": "2011-04-04 00:00:00",
+      "end": "2011-07-19 00:00:00"
+    },
+    "test": {
+      "rows": 142,
+      "start": "2011-07-20 00:00:00",
+      "end": "2011-12-08 00:00:00"
+    }
+  },
+  "protocol": "Fixed-model rolling one-day-ahead holdout; past holdout outcomes become available as next-day lag inputs. Not a fixed-origin multi-step forecast.",
+  "partial_final_day": "2011-12-09 00:00:00",
+  "inference": "Unscored historical replay for final source date, withheld because it may be partial.",
+  "zero_days": "Zero recorded sales, not asserted zero latent demand."
+}

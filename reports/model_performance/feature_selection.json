@@ -1,0 +1,20 @@
+{
+  "selection": "VarianceThreshold inside the estimator pipeline and every CV fold",
+  "allowlist": [
+    "weekday",
+    "month",
+    "day_of_year_sin",
+    "day_of_year_cos",
+    "lag_1",
+    "lag_7",
+    "lag_14",
+    "lag_28",
+    "rolling_7",
+    "rolling_28",
+    "rolling_std_7",
+    "lag_orders_1",
+    "trend_7_28"
+  ],
+  "mutual_information": "Training-only diagnostic; no supervised feature deletion is applied.",
+  "redundancy": "Overlapping lags/rolling means retained; Ridge regularizes and tree models capture interactions. Correlated features complicate importance interpretation."
+}

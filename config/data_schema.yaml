@@ -1,0 +1,17 @@
+required:
+  - Invoice
+  - StockCode
+  - Description
+  - Quantity
+  - InvoiceDate
+  - Price
+  - Customer ID
+  - Country
+not_null: [Invoice, StockCode, Quantity, InvoiceDate, Price, Country]
+numeric: [Quantity, Price]
+date: InvoiceDate
+date_min: "2009-12-01"
+date_max: "2011-12-09 23:59:59"
+# Negative quantity is allowed: cancellations and adjustments are genuine source records.
+# Stock codes and countries have no closed enumeration in the source documentation.
+

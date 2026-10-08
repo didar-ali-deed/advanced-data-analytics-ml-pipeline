@@ -1,0 +1,90 @@
+{
+  "invoice_summary": {
+    "gross_sales": {
+      "count": 40077.0,
+      "mean": 512.3572602240687,
+      "std": 1482.4169154740205,
+      "min": 0.19,
+      "1%": 4.2,
+      "50%": 302.78000000000003,
+      "90%": 933.332,
+      "99%": 4408.594799999983,
+      "max": 168469.6
+    },
+    "sale_lines": {
+      "count": 40077.0,
+      "mean": 25.442373431145047,
+      "std": 42.82301791555015,
+      "min": 1.0,
+      "1%": 1.0,
+      "50%": 15.0,
+      "90%": 52.0,
+      "99%": 198.0,
+      "max": 1114.0
+    },
+    "sale_units": {
+      "count": 40077.0,
+      "mean": 280.44379569329044,
+      "std": 1196.3131441860178,
+      "min": 1.0,
+      "1%": 1.0,
+      "50%": 147.0,
+      "90%": 521.4000000000015,
+      "99%": 2216.439999999988,
+      "max": 87167.0
+    }
+  },
+  "skewness": {
+    "gross_sales": 47.929906211609044,
+    "sale_lines": 7.072667416550295,
+    "sale_units": 51.074453703809624
+  },
+  "kurtosis": {
+    "gross_sales": 4482.500893211432,
+    "sale_lines": 76.75275295258434,
+    "sale_units": 3300.105991995109
+  },
+  "pearson": {
+    "gross_sales": {
+      "gross_sales": 1.0,
+      "sale_lines": 0.28203097086502155,
+      "sale_units": 0.6284644785358211
+    },
+    "sale_lines": {
+      "gross_sales": 0.28203097086502155,
+      "sale_lines": 1.0,
+      "sale_units": 0.10905880417224359
+    },
+    "sale_units": {
+      "gross_sales": 0.6284644785358211,
+      "sale_lines": 0.10905880417224359,
+      "sale_units": 1.0
+    }
+  },
+  "spearman": {
+    "gross_sales": {
+      "gross_sales": 1.0,
+      "sale_lines": 0.5531162562325104,
+      "sale_units": 0.8373930313993408
+    },
+    "sale_lines": {
+      "gross_sales": 0.5531162562325104,
+      "sale_lines": 1.0,
+      "sale_units": 0.5613326944994853
+    },
+    "sale_units": {
+      "gross_sales": 0.8373930313993408,
+      "sale_lines": 0.5613326944994853,
+      "sale_units": 1.0
+    }
+  },
+  "daily_autocorrelation": {
+    "1": 0.4177139012606214,
+    "7": 0.6370805482559402,
+    "14": 0.5468967155631113,
+    "28": 0.514227091983814
+  },
+  "grain": "Invoice groups by invoice/customer/country; serial calendar dependence is retained.",
+  "mean_daily_gross_sales": 27785.848332882277,
+  "zero_sales_days": 135
+}

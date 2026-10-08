@@ -1,0 +1,67 @@
+{
+  "contrast": "UK minus other-country known single-country customers",
+  "unit": "One customer; unweighted mean of each customer's positive invoice-group values",
+  "n_uk": 5349,
+  "n_other": 516,
+  "excluded_anonymous": true,
+  "excluded_multi_country_customers": 13,
+  "mean_uk_gbp": 360.81741696851844,
+  "mean_other_gbp": 654.7980036553024,
+  "mean_difference_gbp": -293.98058668678397,
+  "mean_difference_ci95_gbp": [
+    -377.483554822181,
+    -222.5287465243184
+  ],
+  "cohen_d": -0.2423783772496195,
+  "tests": [
+    {
+      "test": "Welch independent-samples t-test",
+      "null": "Equal population means",
+      "alternative": "Unequal means",
+      "statistic": -7.475035718909333,
+      "p_value": 2.0867408882992164e-13,
+      "holm_p": 2.0867408882992164e-13,
+      "effect": -0.2423783772496195,
+      "effect_definition": "Cohen d, UK minus other"
+    },
+    {
+      "test": "Mann-Whitney U sensitivity",
+      "null": "Equal distributions",
+      "alternative": "Unequal distributions",
+      "statistic": 869915.5,
+      "p_value": 7.502486620237592e-44,
+      "holm_p": 1.5004973240475185e-43,
+      "effect": -0.36964563397345873,
+      "effect_definition": "Rank-biserial effect; not a median test without equal shapes"
+    }
+  ],
+  "normality_diagnostics": {
+    "UK": {
+      "n_sample": 5000,
+      "shapiro_p": 3.338930645773588e-94
+    },
+    "Other": {
+      "n_sample": 516,
+      "shapiro_p": 1.2481457465471162e-33
+    }
+  },
+  "customer_orders_vs_average_order": {
+    "pearson_r": 0.03373422439571942,
+    "spearman_r": 0.20859708113931155,
+    "note": "Descriptive association only; no causal interpretation or additional significance claim."
+  },
+  "daily_mean_gbp": 27551.224008130088,
+  "daily_mean_block_ci95_gbp": [
+    25099.96600609756,
+    29442.902683265587
+  ],
+  "assumptions": [
+    "Customers treated as independent; shared markets and unknown wholesale relationships may violate this.",
+    "Country comparison is observational and not adjusted for mix, tenure or season.",
+    "Welch permits unequal variances; heavy tails motivate the nonparametric sensitivity test.",
+    "Holm correction covers the two explicitly reported geographic tests.",
+    "Bootstrap intervals describe this sample era, not future prediction intervals.",
+    "Seven-day moving blocks preserve local dependence but not all long-term seasonality.",
+    "Paired tests/ANOVA/chi-square omitted because this predefined contrast does not require them."
+  ]
+}

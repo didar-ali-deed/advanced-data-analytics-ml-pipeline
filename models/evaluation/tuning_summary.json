@@ -1,0 +1,15 @@
+{
+  "selected_model": "ridge",
+  "challenger": "ridge",
+  "best_parameters": {
+    "model__alpha": 100
+  },
+  "best_train_cv_MAE": 10646.132968810864,
+  "challenger_validation_MAE": 8507.149299603134,
+  "incumbent_validation_MAE": 7387.086726297424,
+  "incumbent": "ridge",
+  "selection": "Lowest validation MAE before test access",
+  "refit_rows": 568,
+  "refit_end": "2011-07-19 00:00:00",
+  "test_used": false
+}

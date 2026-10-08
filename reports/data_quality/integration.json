@@ -1,0 +1,15 @@
+{
+  "input_rows": 1044843,
+  "output_rows": 1044843,
+  "orphan_rows": 0,
+  "signed_value_before": 19068438.25799999,
+  "signed_value_after": 19068438.25799999,
+  "dimension_rows": {
+    "dim_product": 5304,
+    "dim_customer": 5943,
+    "dim_country": 43,
+    "dim_date": 739
+  },
+  "product_description_policy": "Latest observed description, descriptive use only.",
+  "provenance": "All tables derived from one UCI workbook; no independent external enrichment."
+}

@@ -1,0 +1,12 @@
+column,missing_count,missing_pct,unique_count,dtype
+Invoice,0,0.0,53628,string
+StockCode,0,0.0,5305,string
+Description,4382,0.4105414143723223,5698,string
+Quantity,0,0.0,1057,int64
+InvoiceDate,0,0.0,47635,datetime64[ns]
+Price,0,0.0,2807,float64
+Customer ID,243007,22.766872999172733,5942,string
+Country,0,0.0,43,string
+source_sheet,0,0.0,2,object
+source_row,0,0.0,541910,int64
+line_id,0,0.0,1067371,object

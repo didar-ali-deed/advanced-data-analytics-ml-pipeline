@@ -1,0 +1,39 @@
+{
+  "verified_stages": 25,
+  "source_rows": 1067371,
+  "accepted_rows": 1044843,
+  "quarantined_rows": 22528,
+  "gross_sales_gbp": 20533741.918,
+  "sql_questions": 22,
+  "charts": 22,
+  "powerbi_tables": 6,
+  "selected_model": "ridge",
+  "holdout_metrics": {
+    "selected": {
+      "MAE": 11275.682921078846,
+      "RMSE": 15433.157442885475,
+      "R2": 0.6029059722328332,
+      "WAPE": 0.3069617438696727,
+      "n": 142,
+      "MAPE_note": "Omitted: genuine zero-sales days make MAPE inappropriate."
+    },
+    "seasonal_naive": {
+      "MAE": 12271.486112676055,
+      "RMSE": 17802.842774928715,
+      "R2": 0.47160038223233003,
+      "WAPE": 0.3340708321956877,
+      "n": 142,
+      "MAPE_note": "Omitted: genuine zero-sales days make MAPE inappropriate."
+    },
+    "dummy_mean": {
+      "MAE": 21483.46054376612,
+      "RMSE": 27087.76509258332,
+      "R2": -0.22329198728626176,
+      "WAPE": 0.5848515392838654,
+      "n": 142,
+      "MAPE_note": "Omitted: genuine zero-sales days make MAPE inappropriate."
+    }
+  },
+  "broken_links": [],
+  "raw_sha256": "572e36277c2390fbfde10664750731e0a86f55e33470d91919085f0408e67bfb"
+}

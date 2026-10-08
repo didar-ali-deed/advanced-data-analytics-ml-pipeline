@@ -1,0 +1,181 @@
+{
+  "before": [
+    {
+      "column": "Invoice",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 53628,
+      "dtype": "string"
+    },
+    {
+      "column": "StockCode",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 5305,
+      "dtype": "string"
+    },
+    {
+      "column": "Description",
+      "missing_count": 4382,
+      "missing_pct": 0.4105414143723223,
+      "unique_count": 5698,
+      "dtype": "string"
+    },
+    {
+      "column": "Quantity",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 1057,
+      "dtype": "int64"
+    },
+    {
+      "column": "InvoiceDate",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 47635,
+      "dtype": "datetime64[ns]"
+    },
+    {
+      "column": "Price",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 2807,
+      "dtype": "float64"
+    },
+    {
+      "column": "Customer ID",
+      "missing_count": 243007,
+      "missing_pct": 22.766872999172733,
+      "unique_count": 5942,
+      "dtype": "string"
+    },
+    {
+      "column": "Country",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 43,
+      "dtype": "string"
+    },
+    {
+      "column": "source_sheet",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 2,
+      "dtype": "object"
+    },
+    {
+      "column": "source_row",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 541910,
+      "dtype": "int64"
+    },
+    {
+      "column": "line_id",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 1067371,
+      "dtype": "object"
+    }
+  ],
+  "after": [
+    {
+      "column": "Invoice",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 53623,
+      "dtype": "string"
+    },
+    {
+      "column": "StockCode",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 5304,
+      "dtype": "string"
+    },
+    {
+      "column": "Description",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 5645,
+      "dtype": "string"
+    },
+    {
+      "column": "Quantity",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 1057,
+      "dtype": "int64"
+    },
+    {
+      "column": "InvoiceDate",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 47631,
+      "dtype": "datetime64[ns]"
+    },
+    {
+      "column": "Price",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 2803,
+      "dtype": "float64"
+    },
+    {
+      "column": "Customer ID",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 5943,
+      "dtype": "string"
+    },
+    {
+      "column": "Country",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 43,
+      "dtype": "string"
+    },
+    {
+      "column": "source_sheet",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 2,
+      "dtype": "object"
+    },
+    {
+      "column": "source_row",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 541910,
+      "dtype": "int64"
+    },
+    {
+      "column": "line_id",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 1044843,
+      "dtype": "object"
+    },
+    {
+      "column": "ambiguous_duplicate",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 2,
+      "dtype": "bool"
+    },
+    {
+      "column": "is_cancellation",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 2,
+      "dtype": "boolean"
+    },
+    {
+      "column": "is_adjustment",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 2,
+      "dtype": "boolean"
+    }
+  ]
+}

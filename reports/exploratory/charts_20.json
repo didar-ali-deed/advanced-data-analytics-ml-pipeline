@@ -1,0 +1,20 @@
+[
+  {
+    "title": "One-day-ahead forecasts on untouched holdout",
+    "path": "visualizations/machine_learning/holdout_forecast.png",
+    "question": "How closely do predictions track observed sales?",
+    "interpretation": "Selected holdout MAE: GBP 11,275.68; seasonal baseline MAE: GBP 12,271.49."
+  },
+  {
+    "title": "Predicted versus observed holdout sales",
+    "path": "visualizations/machine_learning/actual_predicted.png",
+    "question": "Where do forecasts deviate from the identity line?",
+    "interpretation": "Holdout R-squared is 0.603; extremes may remain poorly predicted."
+  },
+  {
+    "title": "Holdout residual distribution and scale",
+    "path": "visualizations/machine_learning/residuals.png",
+    "question": "Are forecast errors systematically biased or size dependent?",
+    "interpretation": "Mean signed error is GBP 2,526.87."
+  }
+]

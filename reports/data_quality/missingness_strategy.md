@@ -1,0 +1,3 @@
+# Missingness policy
+
+Missing customer identifiers remain UNKNOWN; do not invent customer assignments. Missing descriptions use UNKNOWN. Missing essential monetary, date, or product fields are quarantined. Descriptive aggregates retain anonymous sales. Predictive numeric median imputers and missing indicators fit within training folds only. No forward filling is justified for transaction identifiers. Country/month differences are diagnostics, not evidence of a specific missing-data mechanism.

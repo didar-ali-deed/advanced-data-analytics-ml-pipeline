@@ -1,0 +1,304 @@
+# Business insights
+
+This report distinguishes measured history from statistical associations and forecasts. Recommended actions require business validation; the dataset reflects a historical retailer.
+
+## How complete and repetitive are accepted records?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/quality.csv](../../reports/exploratory/sql/quality.csv)
+
+**Numerical result:** `[{'accepted_lines': 1044843, 'anonymous_lines': 235282, 'ambiguous_repeat_lines': 22813, 'zero_price_lines': 6024}]`
+
+**Interpretation:** Output contains 1 groups/periods. First reported result: accepted_lines=1.045e+06; anonymous_lines=2.353e+05; ambiguous_repeat_lines=2.281e+04; zero_price_lines=6,024.
+
+**Recommended action:** Prioritize identifier capture and duplicate review.
+
+## How much does ambiguous deduplication change gross sales?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/duplicate_sensitivity.csv](../../reports/exploratory/sql/duplicate_sensitivity.csv)
+
+**Numerical result:** `[{'retained_gross_sales': 20533741.918, 'hypothetical_deduplicated_sales': 20475708.598, 'ambiguous_value_difference': 58033.32}]`
+
+**Interpretation:** Hypothetical removal of repeated business rows changes gross sales by GBP 58,033.32; identity remains uncertain.
+
+**Recommended action:** Resolve source-line identity before deleting repeats.
+
+## How much signed value comes from non-cancellation adjustments?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/adjustments.csv](../../reports/exploratory/sql/adjustments.csv)
+
+**Numerical result:** `[{'non_cancel_negative_lines': 3393, 'adjustment_value': 0.0, 'positive_cancellation_lines': 1}]`
+
+**Interpretation:** Output contains 1 groups/periods. First reported result: non_cancel_negative_lines=3,393; adjustment_value=0; positive_cancellation_lines=1.
+
+**Recommended action:** Review adjustment workflows with finance.
+
+## What are total sales, cancellations, orders and known buyers?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/overview.csv](../../reports/exploratory/sql/overview.csv)
+
+**Numerical result:** `[{'gross_sales': 20533741.918, 'signed_value': 19068438.258, 'cancellation_value': 1465677.23, 'sale_invoices': 40077, 'known_buyers': 5878, 'average_invoice_gbp': 512.3572602240687}]`
+
+**Interpretation:** Gross sales were GBP 20,533,741.92; cancellation value was GBP 1,465,677.23; 40,077 sale invoices were observed.
+
+**Recommended action:** Use the defined KPI denominators consistently.
+
+## How do recorded sales vary across months?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/monthly.csv](../../reports/exploratory/sql/monthly.csv)
+
+**Numerical result:** `[{'month': '2009-12', 'gross_sales': 825685.76, 'net_value': 799847.11, 'cancellation_value': 25838.65, 'orders': 1682, 'complete_month': 1}, {'month': '2010-01', 'gross_sales': 652708.502, 'net_value': 624032.892, 'cancellation_value': 28675.61, 'orders': 1105, 'complete_month': 1}, {'month': '2010-02', 'gross_sales': 553339.736, 'net_value': 533091.426, 'cancellation_value': 20621.88, 'orders': 1201, 'complete_month': 1}, {'month': '2010-03', 'gross_sales': 833570.131, 'net_value': 765848.761, 'cancellation_value': 67721.37, 'orders': 1681, 'complete_month': 1}, {'month': '2010-04', 'gross_sales': 681528.992, 'net_value': 644174.792, 'cancellation_value': 37354.200000000004, 'orders': 1462, 'complete_month': 1}]`
+
+**Interpretation:** Output contains 25 groups/periods. First reported result: month=2009-12; gross_sales=8.257e+05; net_value=7.998e+05; cancellation_value=2.584e+04; orders=1,682; complete_month=1.
+
+**Recommended action:** Compare complete periods before changing capacity.
+
+## Which countries contribute the most gross sales?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/country.csv](../../reports/exploratory/sql/country.csv)
+
+**Numerical result:** `[{'country': 'United Kingdom', 'gross_sales': 17465896.337, 'orders': 36535, 'share': 0.8505949089429867}, {'country': 'EIRE', 'gross_sales': 659149.0, 'orders': 626, 'share': 0.032100773577084164}, {'country': 'Netherlands', 'gross_sales': 554039.74, 'orders': 228, 'share': 0.02698191796763187}, {'country': 'Germany', 'gross_sales': 425578.381, 'orders': 789, 'share': 0.02072580743926344}, {'country': 'France', 'gross_sales': 350654.18, 'orders': 622, 'share': 0.017076974153094542}]`
+
+**Interpretation:** United Kingdom led with 85.1% of accepted gross sales.
+
+**Recommended action:** Prioritize operational support for major markets.
+
+## Which product codes lead gross sales and units?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/products.csv](../../reports/exploratory/sql/products.csv)
+
+**Numerical result:** `[{'product_id': 'M', 'description': 'Manual', 'gross_sales': 339614.89, 'sale_units': 9931, 'revenue_rank': 1}, {'product_id': '22423', 'description': 'REGENCY CAKESTAND 3 TIER', 'gross_sales': 331084.26999999996, 'sale_units': 26519, 'revenue_rank': 2}, {'product_id': 'DOT', 'description': 'DOTCOM POSTAGE', 'gross_sales': 309854.11, 'sale_units': 1415, 'revenue_rank': 3}, {'product_id': '85123A', 'description': 'CREAM HANGING HEART T-LIGHT HOLDER', 'gross_sales': 258065.91, 'sale_units': 94323, 'revenue_rank': 4}, {'product_id': '85099B', 'description': 'JUMBO BAG RED RETROSPOT', 'gross_sales': 180888.03, 'sale_units': 96931, 'revenue_rank': 5}]`
+
+**Interpretation:** Output contains 30 groups/periods. First reported result: product_id=M; description=Manual; gross_sales=3.396e+05; sale_units=9,931; revenue_rank=1.
+
+**Recommended action:** Review availability for leading codes; separate service codes.
+
+## Where is cancellation value concentrated?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/cancellation_country.csv](../../reports/exploratory/sql/cancellation_country.csv)
+
+**Numerical result:** `[{'country': 'United Kingdom', 'cancellation_value': 1268992.11, 'gross_sales': 17465896.337, 'value_ratio': 0.07265542434897826}, {'country': 'EIRE', 'cancellation_value': 48904.73, 'gross_sales': 659149.0, 'value_ratio': 0.07419374071719748}, {'country': 'France', 'cancellation_value': 28725.65, 'gross_sales': 350654.18, 'value_ratio': 0.08192016989502307}, {'country': 'Norway', 'cancellation_value': 20866.59, 'gross_sales': 56322.5, 'value_ratio': 0.37048408717652803}, {'country': 'Spain', 'cancellation_value': 17319.05, 'gross_sales': 108383.81, 'value_ratio': 0.15979369981549826}]`
+
+**Interpretation:** Output contains 43 groups/periods. First reported result: country=United Kingdom; cancellation_value=1.269e+06; gross_sales=1.747e+07; value_ratio=0.07266.
+
+**Recommended action:** Investigate high-value exceptions without assuming return causes.
+
+## What share of sales has no identified customer?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/anonymous.csv](../../reports/exploratory/sql/anonymous.csv)
+
+**Numerical result:** `[{'segment': 'Anonymous', 'lines': 235282, 'gross_sales': 3102190.7399999998, 'sales_share': 0.15107771162160177}, {'segment': 'Identified', 'lines': 809561, 'gross_sales': 17431551.178, 'sales_share': 0.8489222883783983}]`
+
+**Interpretation:** Output contains 2 groups/periods. First reported result: segment=Anonymous; lines=2.353e+05; gross_sales=3.102e+06; sales_share=0.1511.
+
+**Recommended action:** Improve identifier capture while retaining anonymous sales totals.
+
+## How do average invoice sizes differ across countries?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/baskets.csv](../../reports/exploratory/sql/baskets.csv)
+
+**Numerical result:** `[{'country': 'United Kingdom', 'invoice_groups': 36535, 'average_invoice_gbp': 478.0592948405639, 'average_lines': 25.663938688928425, 'average_units': 252.39009169289722}, {'country': 'Germany', 'invoice_groups': 789, 'average_invoice_gbp': 539.3895830164765, 'average_lines': 20.85678073510773, 'average_units': 285.63751584283904}, {'country': 'EIRE', 'invoice_groups': 626, 'average_invoice_gbp': 1052.9536741214058, 'average_lines': 27.43450479233227, 'average_units': 537.6421725239617}, {'country': 'France', 'invoice_groups': 622, 'average_invoice_gbp': 563.7527009646302, 'average_lines': 21.980707395498392, 'average_units': 437.45659163987136}, {'country': 'Netherlands', 'invoice_groups': 228, 'average_invoice_gbp': 2429.9988596491226, 'average_lines': 22.30701754385965, 'average_units': 1683.6842105263158}]`
+
+**Interpretation:** Output contains 43 groups/periods. First reported result: country=United Kingdom; invoice_groups=3.654e+04; average_invoice_gbp=478.1; average_lines=25.66; average_units=252.4.
+
+**Recommended action:** Review basket distributions and wholesale mix before intervention.
+
+## Which weekdays have higher observed sales?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/weekday.csv](../../reports/exploratory/sql/weekday.csv)
+
+**Numerical result:** `[{'weekday': 0, 'calendar_days': 105, 'average_daily_sales': 34189.77262857143, 'average_orders': 60.48571428571429}, {'weekday': 1, 'calendar_days': 106, 'average_daily_sales': 38549.47841509434, 'average_orders': 68.78301886792453}, {'weekday': 2, 'calendar_days': 106, 'average_daily_sales': 32994.713235849056, 'average_orders': 67.78301886792453}, {'weekday': 3, 'calendar_days': 106, 'average_daily_sales': 39670.35483018868, 'average_orders': 78.18867924528301}, {'weekday': 4, 'calendar_days': 106, 'average_daily_sales': 31415.428990566037, 'average_orders': 57.5188679245283}]`
+
+**Interpretation:** Output contains 7 groups/periods. First reported result: weekday=0; calendar_days=105; average_daily_sales=3.419e+04; average_orders=60.49.
+
+**Recommended action:** Use calendar-day averages, including days with no records.
+
+## When during source-local hours are sales recorded?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/hourly.csv](../../reports/exploratory/sql/hourly.csv)
+
+**Numerical result:** `[{'hour': 6, 'gross_sales': 4.25, 'sale_lines': 1}, {'hour': 7, 'gross_sales': 75765.57, 'sale_lines': 1054}, {'hour': 8, 'gross_sales': 528318.71, 'sale_lines': 15530}, {'hour': 9, 'gross_sales': 1769963.391, 'sale_lines': 65874}, {'hour': 10, 'gross_sales': 2584862.013, 'sale_lines': 88742}]`
+
+**Interpretation:** Output contains 16 groups/periods. First reported result: hour=6; gross_sales=4.25; sale_lines=1.
+
+**Recommended action:** Validate timezone and operating hours before scheduling changes.
+
+## Which product codes show the most price variation?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/prices.csv](../../reports/exploratory/sql/prices.csv)
+
+**Numerical result:** `[{'product_id': 'DOT', 'min_price': 0.35, 'max_price': 4505.17, 'different_prices': 1290, 'gross_sales': 309854.11}, {'product_id': 'M', 'min_price': 0.06, 'max_price': 25111.09, 'different_prices': 298, 'gross_sales': 339614.89}, {'product_id': 'POST', 'min_price': 0.5, 'max_price': 8142.75, 'different_prices': 81, 'gross_sales': 125682.42}, {'product_id': '20685', 'min_price': 4.0, 'max_price': 16.98, 'different_prices': 21, 'gross_sales': 66464.71}, {'product_id': '21033', 'min_price': 1.25, 'max_price': 6.04, 'different_prices': 18, 'gross_sales': 10157.79}]`
+
+**Interpretation:** Output contains 30 groups/periods. First reported result: product_id=DOT; min_price=0.35; max_price=4,505; different_prices=1,290; gross_sales=3.099e+05.
+
+**Recommended action:** Check discounts, descriptions and unit definitions.
+
+## How do sales change month over month?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/growth.csv](../../reports/exploratory/sql/growth.csv)
+
+**Numerical result:** `[{'month': '2009-12', 'gross_sales': 825685.76, 'complete_month': 1, 'mom_growth': None}, {'month': '2010-01', 'gross_sales': 652708.502, 'complete_month': 1, 'mom_growth': -0.20949526609251445}, {'month': '2010-02', 'gross_sales': 553339.736, 'complete_month': 1, 'mom_growth': -0.15224064907308343}, {'month': '2010-03', 'gross_sales': 833570.131, 'complete_month': 1, 'mom_growth': 0.5064346128939492}, {'month': '2010-04', 'gross_sales': 681528.992, 'complete_month': 1, 'mom_growth': -0.18239753722653484}]`
+
+**Interpretation:** Output contains 25 groups/periods. First reported result: month=2009-12; gross_sales=8.257e+05; complete_month=1; mom_growth=nan.
+
+**Recommended action:** Investigate large changes in complete months.
+
+## How do complete months compare with the previous year?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/yoy.csv](../../reports/exploratory/sql/yoy.csv)
+
+**Numerical result:** `[{'month': '2010-12', 'gross_sales': 823746.14, 'previous_year_sales': 825685.76, 'yoy_growth': -0.0023491019149948222}, {'month': '2011-01', 'gross_sales': 691364.56, 'previous_year_sales': 652708.502, 'yoy_growth': 0.059224076109859025}, {'month': '2011-02', 'gross_sales': 523631.89, 'previous_year_sales': 553339.736, 'yoy_growth': -0.05368825708190239}, {'month': '2011-03', 'gross_sales': 717639.36, 'previous_year_sales': 833570.131, 'yoy_growth': -0.13907740535391144}, {'month': '2011-04', 'gross_sales': 537808.621, 'previous_year_sales': 681528.992, 'yoy_growth': -0.21087932089028416}]`
+
+**Interpretation:** Output contains 12 groups/periods. First reported result: month=2010-12; gross_sales=8.237e+05; previous_year_sales=8.257e+05; yoy_growth=-0.002349.
+
+**Recommended action:** Investigate product and customer mix behind changes.
+
+## What do seven-day trends and running sales show?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/rolling.csv](../../reports/exploratory/sql/rolling.csv)
+
+**Numerical result:** `[{'date': '2009-12-01', 'gross_sales': 54513.5, 'moving_7_day_sales': 54513.5, 'running_sales': 54513.5}, {'date': '2009-12-02', 'gross_sales': 63352.51, 'moving_7_day_sales': 58933.005000000005, 'running_sales': 117866.01000000001}, {'date': '2009-12-03', 'gross_sales': 74037.91, 'moving_7_day_sales': 63967.973333333335, 'running_sales': 191903.92}, {'date': '2009-12-04', 'gross_sales': 40732.92, 'moving_7_day_sales': 58159.21, 'running_sales': 232636.84}, {'date': '2009-12-05', 'gross_sales': 9803.05, 'moving_7_day_sales': 48487.978, 'running_sales': 242439.89}]`
+
+**Interpretation:** Output contains 739 groups/periods. First reported result: date=2009-12-01; gross_sales=5.451e+04; moving_7_day_sales=5.451e+04; running_sales=5.451e+04.
+
+**Recommended action:** Use trailing trends with the original daily series.
+
+## How concentrated are known-customer sales?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/concentration.csv](../../reports/exploratory/sql/concentration.csv)
+
+**Numerical result:** `[{'rank': 1, 'customer_id': '18102', 'gross_sales': 580987.04, 'share': 0.033329623627141786, 'cumulative_share': 0.033329623627141786}, {'rank': 2, 'customer_id': '14646', 'gross_sales': 528602.52, 'share': 0.030324468235915707, 'cumulative_share': 0.0636540918630575}, {'rank': 3, 'customer_id': '14156', 'gross_sales': 313624.17, 'share': 0.017991753390014915, 'cumulative_share': 0.0816458452530724}, {'rank': 4, 'customer_id': '14911', 'gross_sales': 291561.05, 'share': 0.01672605306451288, 'cumulative_share': 0.09837189831758529}, {'rank': 5, 'customer_id': '17450', 'gross_sales': 244944.25, 'share': 0.014051775857396965, 'cumulative_share': 0.11242367417498225}]`
+
+**Interpretation:** Output contains 100 groups/periods. First reported result: rank=1; customer_id=18102; gross_sales=5.81e+05; share=0.03333; cumulative_share=0.03333.
+
+**Recommended action:** Monitor continuity for high-contribution customers.
+
+## How much activity comes from repeat observed buyers?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/repeat.csv](../../reports/exploratory/sql/repeat.csv)
+
+**Numerical result:** `[{'segment': 'Multiple observed invoices', 'customers': 4255, 'gross_sales': 16868755.826}, {'segment': 'One observed invoice', 'customers': 1623, 'gross_sales': 562795.352}]`
+
+**Interpretation:** Output contains 2 groups/periods. First reported result: segment=Multiple observed invoices; customers=4,255; gross_sales=1.687e+07.
+
+**Recommended action:** Design retention experiments; avoid lifetime claims.
+
+## How often do customer cohorts buy again?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/cohorts.csv](../../reports/exploratory/sql/cohorts.csv)
+
+**Numerical result:** `[{'cohort': '2009-12', 'month': '2009-12', 'months_since_first': 0, 'active_customers': 955, 'initial_customers': 955, 'observed_retention': 1.0}, {'cohort': '2009-12', 'month': '2010-01', 'months_since_first': 1, 'active_customers': 337, 'initial_customers': 955, 'observed_retention': 0.35287958115183243}, {'cohort': '2009-12', 'month': '2010-02', 'months_since_first': 2, 'active_customers': 319, 'initial_customers': 955, 'observed_retention': 0.33403141361256544}, {'cohort': '2009-12', 'month': '2010-03', 'months_since_first': 3, 'active_customers': 406, 'initial_customers': 955, 'observed_retention': 0.42513089005235605}, {'cohort': '2009-12', 'month': '2010-04', 'months_since_first': 4, 'active_customers': 363, 'initial_customers': 955, 'observed_retention': 0.38010471204188484}]`
+
+**Interpretation:** 25 observed first-purchase cohorts span 325 cohort-month cells. Later cohorts have shorter follow-up; absent future cells are unobserved, not zero retention.
+
+**Recommended action:** Compare cohorts at equal maturity; flag incomplete last month.
+
+## Which known customers have high recency, frequency and value?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/rfm.csv](../../reports/exploratory/sql/rfm.csv)
+
+**Numerical result:** `[{'customer_id': '18102', 'recency_days': 0.0, 'frequency': 145, 'monetary': 580987.04, 'monetary_quartile': 4}, {'customer_id': '14646', 'recency_days': 1.0, 'frequency': 151, 'monetary': 528602.52, 'monetary_quartile': 4}, {'customer_id': '14156', 'recency_days': 9.0, 'frequency': 156, 'monetary': 313624.17, 'monetary_quartile': 4}, {'customer_id': '14911', 'recency_days': 1.0, 'frequency': 398, 'monetary': 291561.05, 'monetary_quartile': 4}, {'customer_id': '17450', 'recency_days': 8.0, 'frequency': 51, 'monetary': 244944.25, 'monetary_quartile': 4}]`
+
+**Interpretation:** Output contains 5,878 groups/periods. First reported result: customer_id=18102; recency_days=0; frequency=145; monetary=5.81e+05; monetary_quartile=4.
+
+**Recommended action:** Validate outreach rules on contemporary consented data.
+
+## Which dates have no recorded positive sales?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/zero_days.csv](../../reports/exploratory/sql/zero_days.csv)
+
+**Numerical result:** `[{'date': '2009-12-12', 'weekday': 5, 'recorded_lines': 0, 'gross_sales': 0}, {'date': '2009-12-19', 'weekday': 5, 'recorded_lines': 0, 'gross_sales': 0}, {'date': '2009-12-24', 'weekday': 3, 'recorded_lines': 0, 'gross_sales': 0}, {'date': '2009-12-25', 'weekday': 4, 'recorded_lines': 0, 'gross_sales': 0}, {'date': '2009-12-26', 'weekday': 5, 'recorded_lines': 0, 'gross_sales': 0}]`
+
+**Interpretation:** 135 calendar days had no positive recorded sales; the cause is unobserved.
+
+**Recommended action:** Confirm whether gaps reflect closure or missing capture.
+
+## How concentrated are sales across product codes?
+
+**Type:** Observed descriptive fact
+
+**Evidence:** [reports/exploratory/sql/contributions.csv](../../reports/exploratory/sql/contributions.csv)
+
+**Numerical result:** `[{'product_id': 'M', 'description': 'Manual', 'gross_sales': 339614.89, 'sales_share': 0.016539357091183246, 'cumulative_share': 0.016539357091183246}, {'product_id': '22423', 'description': 'REGENCY CAKESTAND 3 TIER', 'gross_sales': 331084.26999999996, 'sales_share': 0.01612391308521169, 'cumulative_share': 0.032663270176394935}, {'product_id': 'DOT', 'description': 'DOTCOM POSTAGE', 'gross_sales': 309854.11, 'sales_share': 0.015089997295056095, 'cumulative_share': 0.04775326747145103}, {'product_id': '85123A', 'description': 'CREAM HANGING HEART T-LIGHT HOLDER', 'gross_sales': 258065.91, 'sales_share': 0.012567894883970364, 'cumulative_share': 0.06032116235542139}, {'product_id': '85099B', 'description': 'JUMBO BAG RED RETROSPOT', 'gross_sales': 180888.03, 'sales_share': 0.008809306687615103, 'cumulative_share': 0.06913046904303649}]`
+
+**Interpretation:** Output contains 5,304 groups/periods. First reported result: product_id=M; description=Manual; gross_sales=3.396e+05; sales_share=0.01654; cumulative_share=0.01654.
+
+**Recommended action:** Review supply continuity for high-contribution codes.
+
+## Do customer-level basket values differ geographically?
+
+**Type:** Statistical association
+
+**Evidence:** [reports/statistical/statistics.json](../../reports/statistical/statistics.json)
+
+**Numerical result:** `{'difference_gbp': -293.98058668678397, 'ci95': [-377.483554822181, -222.5287465243184]}`
+
+**Interpretation:** Customer-level observational contrast excludes anonymous and multi-country buyers.
+
+**Recommended action:** Investigate customer mix; do not infer a causal geographic effect.
+
+## Can next-day recorded sales be predicted usefully?
+
+**Type:** Evaluated prediction
+
+**Evidence:** [models/evaluation/holdout_metrics.json](../../models/evaluation/holdout_metrics.json)
+
+**Numerical result:** `{'model': 'ridge', 'holdout': {'MAE': 11275.682921078846, 'RMSE': 15433.157442885475, 'R2': 0.6029059722328332, 'WAPE': 0.3069617438696727, 'n': 142, 'MAPE_note': 'Omitted: genuine zero-sales days make MAPE inappropriate.'}, 'seasonal_baseline': {'MAE': 12271.486112676055, 'RMSE': 17802.842774928715, 'R2': 0.47160038223233003, 'WAPE': 0.3340708321956877, 'n': 142, 'MAPE_note': 'Omitted: genuine zero-sales days make MAPE inappropriate.'}}`
+
+**Interpretation:** Holdout MAE difference versus seasonal baseline is GBP -995.80 (lower is better).
+
+**Recommended action:** Run a contemporary shadow evaluation before operational use.
+
+## How many records remain analytically usable?
+
+**Type:** Observed data-quality fact
+
+**Evidence:** [reports/data_quality/cleaning_log.json](../../reports/data_quality/cleaning_log.json)
+
+**Numerical result:** `{'original_rows': 1067371, 'accepted_rows': 1044843, 'quarantined_rows': 22528, 'removed_rows': 0, 'reasons_overlap': {'overlapping_sheet_copy': 22523, 'missing_required': 0, 'invalid_numeric': 0, 'negative_price': 5, 'fractional_quantity': 0, 'invalid_date': 0}, 'text_values_corrected': {'Invoice': 0, 'StockCode': 1, 'Description': 247906, 'Country': 0}, 'unknown_customers': 235282, 'unknown_descriptions': 4275, 'ambiguous_duplicate_rows_retained': 22813, 'policy': 'Exact cross-sheet copies are quarantined by multiset overlap reconciliation; ambiguous within-sheet repeats remain. All rows reconcile to accepted + quarantine.'}`
+
+**Interpretation:** 1,044,843 accepted rows plus 22,528 quarantined rows reconcile to source.
+
+**Recommended action:** Review quarantine reasons and resolve source identity ambiguity.
+

@@ -1,0 +1,8 @@
+{
+  "rows": 1067371,
+  "exact_business_row_repeats": 34335,
+  "repeated_invoice_rows": 1013743,
+  "duplicate_line_ids": 0,
+  "policy": "Retain ambiguous repeated business lines; source row is the unique key.",
+  "near_repeat_rows": 67250
+}

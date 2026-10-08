@@ -1,0 +1,8 @@
+[
+  {
+    "title": "Frozen-model permutation sensitivity",
+    "path": "visualizations/machine_learning/permutation_importance.png",
+    "question": "Which inputs does this fitted model rely on?",
+    "interpretation": "Largest observed sensitivity: weekday; correlated lags and calendar dependencies make this diagnostic non-causal."
+  }
+]

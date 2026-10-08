@@ -1,0 +1,9 @@
+{
+  "input_path": "E:\\advanced-data-analytics\\data\\features\\inference_input.csv",
+  "input_sha256": "22de2a5e81178e63e23bb2c4fc902e104ad0f53bf9e16e9500a3b5c4ded56dda",
+  "model_sha256": "3952bfc66dc2fca331e075fcc2f8c8748ed96cdbade7b151574495b708c78234",
+  "rows": 1,
+  "uncertainty": "No interval: no calibrated uncertainty model was trained.",
+  "availability": "Caller must ensure every lag/rolling value uses only completed days before date.",
+  "default": "Replay on the potentially partial final source date; no validated future result claimed."
+}

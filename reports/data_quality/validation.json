@@ -1,0 +1,44 @@
+{
+  "Year 2009-2010": {
+    "rows": 525461,
+    "missing_columns": [],
+    "blocking": [],
+    "issues": {
+      "Invoice:null": 0,
+      "StockCode:null": 0,
+      "Quantity:null": 0,
+      "InvoiceDate:null": 0,
+      "Price:null": 0,
+      "Country:null": 0,
+      "Quantity:invalid_numeric": 0,
+      "Price:invalid_numeric": 0,
+      "invalid_date": 0,
+      "out_of_date_range": 0,
+      "negative_price": 3,
+      "fractional_quantity": 0,
+      "blank_country": 0
+    },
+    "note": "No documented closed country/product vocabulary. C-prefixed invoices are cancellations. Row-level issues remain in validated data for stage 07 quarantine."
+  },
+  "Year 2010-2011": {
+    "rows": 541910,
+    "missing_columns": [],
+    "blocking": [],
+    "issues": {
+      "Invoice:null": 0,
+      "StockCode:null": 0,
+      "Quantity:null": 0,
+      "InvoiceDate:null": 0,
+      "Price:null": 0,
+      "Country:null": 0,
+      "Quantity:invalid_numeric": 0,
+      "Price:invalid_numeric": 0,
+      "invalid_date": 0,
+      "out_of_date_range": 0,
+      "negative_price": 2,
+      "fractional_quantity": 0,
+      "blank_country": 0
+    },
+    "note": "No documented closed country/product vocabulary. C-prefixed invoices are cancellations. Row-level issues remain in validated data for stage 07 quarantine."
+  }
+}

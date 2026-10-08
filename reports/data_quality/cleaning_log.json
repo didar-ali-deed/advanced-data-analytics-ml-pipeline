@@ -1,0 +1,24 @@
+{
+  "original_rows": 1067371,
+  "accepted_rows": 1044843,
+  "quarantined_rows": 22528,
+  "removed_rows": 0,
+  "reasons_overlap": {
+    "overlapping_sheet_copy": 22523,
+    "missing_required": 0,
+    "invalid_numeric": 0,
+    "negative_price": 5,
+    "fractional_quantity": 0,
+    "invalid_date": 0
+  },
+  "text_values_corrected": {
+    "Invoice": 0,
+    "StockCode": 1,
+    "Description": 247906,
+    "Country": 0
+  },
+  "unknown_customers": 235282,
+  "unknown_descriptions": 4275,
+  "ambiguous_duplicate_rows_retained": 22813,
+  "policy": "Exact cross-sheet copies are quarantined by multiset overlap reconciliation; ambiguous within-sheet repeats remain. All rows reconcile to accepted + quarantine."
+}

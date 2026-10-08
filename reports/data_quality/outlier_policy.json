@@ -1,0 +1,4 @@
+{
+  "policy": "Retain statistical extremes; quarantine impossible values only.",
+  "mad_zero": "MAD flags disabled for a constant or zero-MAD variable."
+}

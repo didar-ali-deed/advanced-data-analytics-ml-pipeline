@@ -1,0 +1,238 @@
+{
+  "rows": 1067371,
+  "columns": 11,
+  "memory_bytes": 557583573,
+  "missing": [
+    {
+      "column": "Invoice",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 53628,
+      "dtype": "string"
+    },
+    {
+      "column": "StockCode",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 5305,
+      "dtype": "string"
+    },
+    {
+      "column": "Description",
+      "missing_count": 4382,
+      "missing_pct": 0.4105414143723223,
+      "unique_count": 5698,
+      "dtype": "string"
+    },
+    {
+      "column": "Quantity",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 1057,
+      "dtype": "int64"
+    },
+    {
+      "column": "InvoiceDate",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 47635,
+      "dtype": "datetime64[ns]"
+    },
+    {
+      "column": "Price",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 2807,
+      "dtype": "float64"
+    },
+    {
+      "column": "Customer ID",
+      "missing_count": 243007,
+      "missing_pct": 22.766872999172733,
+      "unique_count": 5942,
+      "dtype": "string"
+    },
+    {
+      "column": "Country",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 43,
+      "dtype": "string"
+    },
+    {
+      "column": "source_sheet",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 2,
+      "dtype": "object"
+    },
+    {
+      "column": "source_row",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 541910,
+      "dtype": "int64"
+    },
+    {
+      "column": "line_id",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "unique_count": 1067371,
+      "dtype": "object"
+    }
+  ],
+  "numeric": {
+    "Quantity": {
+      "count": 1067371.0,
+      "mean": 9.9388984711033,
+      "std": 172.70579407675342,
+      "min": -80995.0,
+      "1%": -3.0,
+      "25%": 1.0,
+      "50%": 3.0,
+      "75%": 10.0,
+      "99%": 100.0,
+      "max": 80995.0
+    },
+    "Price": {
+      "count": 1067371.0,
+      "mean": 4.649387727416239,
+      "std": 123.5530587214632,
+      "min": -53594.36,
+      "1%": 0.21,
+      "25%": 1.25,
+      "50%": 2.1,
+      "75%": 4.15,
+      "99%": 18.0,
+      "max": 38970.0
+    },
+    "source_row": {
+      "count": 1067371.0,
+      "mean": 266907.6229043135,
+      "std": 154171.5187543954,
+      "min": 2.0,
+      "1%": 5338.700000000001,
+      "25%": 133423.0,
+      "50%": 266844.0,
+      "75%": 400265.5,
+      "99%": 531237.3,
+      "max": 541911.0
+    }
+  },
+  "skewness": {
+    "Quantity": 3.996144614707456,
+    "Price": -69.1647338572545,
+    "source_row": 0.0024616532813287175
+  },
+  "kurtosis": {
+    "Quantity": 155059.6934016398,
+    "Price": 73751.82895558054,
+    "source_row": -1.1965938778379992
+  },
+  "correlations": {
+    "Quantity": {
+      "Quantity": 1.0,
+      "Price": -0.0013187514887231867,
+      "source_row": -0.001983471007591648
+    },
+    "Price": {
+      "Quantity": -0.0013187514887231867,
+      "Price": 1.0,
+      "source_row": -0.0017301266942685754
+    },
+    "source_row": {
+      "Quantity": -0.001983471007591648,
+      "Price": -0.0017301266942685754,
+      "source_row": 1.0
+    }
+  },
+  "constant_columns": [],
+  "high_cardinality": [
+    "source_row",
+    "line_id"
+  ],
+  "date_coverage": {
+    "InvoiceDate": [
+      "2009-12-01 07:45:00",
+      "2011-12-09 12:50:00"
+    ]
+  },
+  "top_categories": {
+    "Invoice": {
+      "537434": 1350,
+      "538071": 1304,
+      "537638": 1202,
+      "537237": 1194,
+      "536876": 1186,
+      "536592": 1184,
+      "537823": 1182,
+      "537240": 1136,
+      "573585": 1114,
+      "537666": 1072
+    },
+    "StockCode": {
+      "85123A": 5829,
+      "22423": 4424,
+      "85099B": 4216,
+      "21212": 3318,
+      "20725": 3259,
+      "84879": 2960,
+      "47566": 2768,
+      "21232": 2747,
+      "22197": 2549,
+      "22383": 2540
+    },
+    "Description": {
+      "WHITE HANGING HEART T-LIGHT HOLDER": 5918,
+      "REGENCY CAKESTAND 3 TIER": 4412,
+      "<NA>": 4382,
+      "JUMBO BAG RED RETROSPOT": 3469,
+      "ASSORTED COLOUR BIRD ORNAMENT": 2958,
+      "PARTY BUNTING": 2765,
+      "STRAWBERRY CERAMIC TRINKET BOX": 2613,
+      "LUNCH BAG  BLACK SKULL.": 2529,
+      "JUMBO STORAGE BAG SUKI": 2434,
+      "HEART OF WICKER SMALL": 2319
+    },
+    "Customer ID": {
+      "<NA>": 243007,
+      "17841": 13097,
+      "14911": 11613,
+      "12748": 7307,
+      "14606": 6709,
+      "14096": 5128,
+      "15311": 4717,
+      "14156": 4130,
+      "14646": 3890,
+      "13089": 3438
+    },
+    "Country": {
+      "United Kingdom": 981330,
+      "EIRE": 17866,
+      "Germany": 17624,
+      "France": 14330,
+      "Netherlands": 5140,
+      "Spain": 3811,
+      "Switzerland": 3189,
+      "Belgium": 3123,
+      "Portugal": 2620,
+      "Australia": 1913
+    },
+    "source_sheet": {
+      "Year 2010-2011": 541910,
+      "Year 2009-2010": 525461
+    },
+    "line_id": {
+      "Year 2010-2011:541911": 1,
+      "Year 2009-2010:2": 1,
+      "Year 2009-2010:3": 1,
+      "Year 2009-2010:4": 1,
+      "Year 2009-2010:5": 1,
+      "Year 2009-2010:6": 1,
+      "Year 2009-2010:7": 1,
+      "Year 2009-2010:8": 1,
+      "Year 2009-2010:9": 1,
+      "Year 2009-2010:10": 1
+    }
+  }
+}
